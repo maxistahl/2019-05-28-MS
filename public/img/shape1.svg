@@ -1,0 +1,8 @@
+<svg width="559" height="365" viewBox="0 0 559 365" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <pattern id="img1" patternUnits="userSpaceOnUse" width="100" height="100">
+    <image xlink:href="watch-black1.jpg" x="0" y="0" width="100" height="100" />
+  </pattern>
+</defs>
+<path d="M558.906 0H0V365H348.173L558.906 0Z" fill="url(#img1)"/>
+</svg>

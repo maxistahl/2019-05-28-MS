@@ -1,0 +1,16 @@
+{
+  "name": "challenge-making-sense",
+  "version": "1.0.0",
+  "description": "challenge for UX Developer",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w sass/styles.scss public/css/styles.css --output-style compressed",
+    "start": "live-server --open=public --host=localhost"
+  },
+  "author": "Maximiliano Stahl",
+  "license": "MIT",
+  "devDependencies": {
+    "node-sass": "*",
+    "live-server": "*"
+  }
+}

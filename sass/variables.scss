@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700|Open+Sans:400,600');
+
+$font-primary: 'Montserrat', sans-serif;
+$font-default: 'Open Sans', sans-serif;
+$color-dark-1: #151515;
+$color-dark-2: #333333;
+$color-light-1: #ffffff;
+
+$mobile-width: 420px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+$desktop-xl-width: 1148px;
+$desktop-2xl-width: 1440px;
+
+@mixin mobile {
+  @media (min-width: #{$mobile-width}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin desktop-xl {
+  @media (min-width: #{$desktop-xl-width}) {
+    @content;
+  }
+}
+
+@mixin desktop-2xl {
+  @media (min-width: #{$desktop-2xl-width}) {
+    @content;
+  }
+}

@@ -1,0 +1,172 @@
+@import 'variables';
+
+.slider {
+  position: relative;
+
+  .slide-items {
+    position: relative;
+    height: 405px;
+    width: 100vw;
+
+    .slide-item {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-160vw);
+      transition: transform 1s ease, opacity 0.4s ease;
+      height: 405px;
+      max-width: 900px;
+      width: 100%;
+      opacity: 0;
+
+      .left,
+      .right {
+        svg {
+          position: absolute;
+          top: 0;
+          left: 0;
+          transform: translate(-79px, -69px);
+        }
+      }
+
+      .left {
+        position: absolute;
+        top: 0;
+        right: 50%;
+        max-width: 559px;
+        height: 365px;
+        transform: translate(109px, 10px);
+        transition: transform 3.8s ease 0.5s;
+        width: calc(50vw + 109px);
+
+        button {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 90;
+          background-color: $color-dark-1;
+          padding: 16px 50px;
+          border: none;
+          color: $color-light-1;
+          text-transform: uppercase;
+          font-size: 10px;
+          font-family: $font-primary;
+          box-shadow: 0 8px 17px rgba($color-dark-1, 0.3);
+        }
+      }
+      .right {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        max-width: 559px;
+        height: 365px;
+        transform: translate(-109px, 10px);
+        transition: transform 5.8s ease 0.5s;
+        width: calc(50vw + 109px);
+
+        button {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          z-index: 100;
+          background-color: transparent;
+          border: none;
+          text-transform: uppercase;
+          font-size: 10px;
+          font-family: $font-primary;
+          padding: 20px;
+          color: $color-dark-2;
+        }
+      }
+      &.active {
+        transform: translateX(-50%);
+        opacity: 1;
+
+        & ~ .slide-item {
+          transform: translateX(60vw);
+          opacity: 0;
+        }
+
+        .left {
+          transform: translate(109px, 0px);
+        }
+
+        .right {
+          transform: translate(-109px, 40px);
+        }
+      }
+    }
+  }
+  .slide-control {
+    padding: 50px 0;
+
+    button {
+      background-color: transparent;
+      border: 2px solid transparent;
+      padding: 14px;
+      font-size: 12px;
+      font-family: $font-primary;
+      text-transform: uppercase;
+      color: $color-light-1;
+      position: relative;
+      transition: border 0.3s ease, padding 0.3s ease;
+
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 2px;
+        height: 40px;
+        transform: translate(15px, -42px) rotate(30deg);
+        transition: transform 0.3s ease 0.3s, opacity 0.3s ease 0.3s;
+        background-color: $color-light-1;
+        opacity: 0;
+      }
+      &:after {
+        transform: translate(-9px, 2px) rotate(30deg);
+      }
+
+      &.active {
+        border: 2px solid $color-light-1;
+        padding: 14px 30px;
+
+        &:before,
+        &:after {
+          transform: translate(20px, -52px) rotate(30deg);
+          opacity: 1;
+        }
+        &:after {
+          transform: translate(-14px, 12px) rotate(30deg);
+        }
+      }
+    }
+  }
+}
+
+.colors {
+  width: 16px;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  z-index: 100;
+
+  .color {
+    width: 100%;
+    padding-top: 100%;
+    border-radius: 50%;
+    margin: 10px 15px;
+
+    &.dark {
+      background-color: $color-dark-2;
+    }
+    &.green {
+      background-color: #5da552;
+    }
+    &.orange {
+      background-color: orange;
+    }
+  }
+}
